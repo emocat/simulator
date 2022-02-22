@@ -88,6 +88,7 @@ public class NPCWaypointBehaviour : NPCBehaviourBase
     {
         Debug.Assert(LaneData != null);
         rb.isKinematic = true;
+        // controller.MainCollider.isTrigger = true;
         controller.MainCollider.isTrigger = true;
         controller.ResetLights();
         currentSpeed = 0f;

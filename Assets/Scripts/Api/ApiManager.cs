@@ -358,6 +358,11 @@ namespace Simulator.Api
                 var j = new JSONObject();
                 j.Add("type", new JSONString("collision"));
                 j.Add("agent", new JSONString(uid1));
+                // Console.WriteLine("----------- OnCollision");
+                // Console.WriteLine(obj.ToString());
+                // Console.WriteLine(other.ToString());
+                // Console.WriteLine(string.Join(Environment.NewLine, AgentUID));
+                // Console.WriteLine(System.Environment.StackTrace);
                 if (AgentUID.TryGetValue(other, out uid2))
                 {
                     j.Add("other", new JSONString(uid2));
