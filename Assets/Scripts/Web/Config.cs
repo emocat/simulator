@@ -42,6 +42,7 @@ namespace Simulator.Web
 
         public static string Root;
         public static string PersistentDataPath;
+        public static string SimulationID;
 
         public static List<SensorBase> SensorPrefabs;
         public static List<SensorConfig> Sensors;
@@ -708,6 +709,14 @@ namespace Simulator.Web
             {
                 switch (args[i])
                 {
+                    case "--simulationId":
+                        if (i == args.Length - 1)
+                        {
+                            Debug.LogError("No value for sim id provided!");
+                            Application.Quit(1);
+                        }
+                        SimulationID = args[++i];
+                        break;
                     case "--simid":
                         if (i == args.Length - 1)
                         {

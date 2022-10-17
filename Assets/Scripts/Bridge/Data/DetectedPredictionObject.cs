@@ -12,6 +12,8 @@ namespace Simulator.Bridge.Data
     {
         public Detected3DObject Data;
         public Trajectory[] trajectory;
+        public string Intent;
+        public string Priority;
     }
 
     public class DetectedPredictionObjectData

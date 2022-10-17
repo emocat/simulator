@@ -10,6 +10,8 @@ using UnityEngine.UI;
 using Simulator.Database.Services;
 using System.Linq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
 
 namespace Simulator.Web
 {
@@ -72,6 +74,19 @@ namespace Simulator.Web
             offlineDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
             UpdateStatus();
             TaskProgressManager.Instance.OnUpdate += UpdateDownloadProgress;
+            if (Config.SimulationID != null)
+            {
+                _ = StartSimulation(Config.SimulationID);
+            }
+        }
+
+        async Task StartSimulation(string simulationID)
+        {
+            //await new WaitForSeconds(3.0f);
+            Console.WriteLine($"SimulationID is {simulationID}:\n");
+            await Task.Delay(5000);
+            selectedSim = int.Parse(simulationID);
+            OnOfflineStartButtonClicked();
         }
 
         public void UpdateDownloadProgress()
