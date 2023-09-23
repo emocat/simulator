@@ -995,12 +995,12 @@ namespace Simulator
                 return;
             }
 
-            if (ConnectionManager.Status != ConnectionManager.ConnectionStatus.Online)
-            {
-                ConnectionUI.UpdateStatusText("Cannot enter Scenario Editor when connection is not established.");
-                Debug.LogWarning("Cannot enter Scenario Editor when connection is not established.");
-                return;
-            }
+            // if (ConnectionManager.Status != ConnectionManager.ConnectionStatus.Online)
+            // {
+            //     ConnectionUI.UpdateStatusText("Cannot enter Scenario Editor when connection is not established.");
+            //     Debug.LogWarning("Cannot enter Scenario Editor when connection is not established.");
+            //     return;
+            // }
 
             var maps = await ConnectionManager.API.GetLibrary<MapDetailData>();
             if (maps.Length == 0)

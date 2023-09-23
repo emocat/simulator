@@ -127,7 +127,7 @@ namespace Simulator.Web
                     linkButton.gameObject.SetActive(true);
                     offlineDropdown.gameObject.SetActive(false);
                     offlineStartButton.gameObject.SetActive(false);
-                    VSEButton.gameObject.SetActive(false);
+                    VSEButton.gameObject.SetActive(true);
                     CloudTypeText.text = ConnectionManager.API?.CloudType;
                     break;
                 case ConnectionManager.ConnectionStatus.Offline:
@@ -146,7 +146,7 @@ namespace Simulator.Web
                     linkButton.gameObject.SetActive(false);
                     offlineDropdown.gameObject.SetActive(true);
                     offlineStartButton.gameObject.SetActive(true);
-                    VSEButton.gameObject.SetActive(false);
+                    VSEButton.gameObject.SetActive(true);
                     UpdateDropdown();
                     CloudTypeText.text = "OFFLINE";
                     break;
